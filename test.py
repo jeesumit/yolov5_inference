@@ -97,7 +97,10 @@ if __name__ == '__main__':
       net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
       net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
       # Process image.
+
       detections = pre_process(frame, net)
+      for i in detections:
+            print(i.shape)
       img = post_process(frame.copy(), detections)
       """
       Put efficiency information. The function getPerfProfile returns       the overall time for inference(t) 
